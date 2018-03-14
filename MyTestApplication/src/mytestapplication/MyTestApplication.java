@@ -23,6 +23,14 @@ public class MyTestApplication {
         System.out.println(RandomGenerator.ReturnBetween(5,0).getmin());
         System.out.println(RandomGenerator.ReturnMin(5).getmax());
         System.out.println(RandomGenerator.ReturnMax(5).getmin());
+        
+       NutritionFacts Coca = new NutritionFacts.Builder(0,0).calories(0).sodium(0).carbohydrate(0).build();
+       NutritionFacts Coca1 = new NutritionFacts.Builder(0,0).calories(0).sodium(0).build();
+       NutritionFacts Coca2 = new NutritionFacts.Builder(0,0).calories(0).build();
+       NutritionFacts Coca3 = new NutritionFacts.Builder(0,0).build();
+       
+       
+    
       
     }
     
