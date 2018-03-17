@@ -13,11 +13,14 @@ public class ELVIS {
          private String x="this is atrribut";
     
             private static final ELVIS INSTANCE = new ELVIS();
-          //  public static final Elvis INSTANCE = new Elvis();
 
                private ELVIS() {}
                public static ELVIS getInstance() { return INSTANCE; }
                 public void leaveTheBuilding() { }
+                
+                private Object readResolve() {
+                            return INSTANCE;
+                            }
             
                 
                public String GetX()
