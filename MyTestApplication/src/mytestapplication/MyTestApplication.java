@@ -5,6 +5,7 @@
  */
 package mytestapplication;
 
+import java.util.concurrent.TimeUnit;
 import static mytestapplication.RandomGenerator.ReturnBetween;
 
 /**
@@ -12,15 +13,18 @@ import static mytestapplication.RandomGenerator.ReturnBetween;
  * @author Vi Incorporated
  */
 public class MyTestApplication {
-
+       
+    
+    
+    private static boolean stopRequested;
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
      
       //static mehod factory
-        System.out.println(RandomGenerator.ReturnBetween(5,0).getmin());
+      /*  System.out.println(RandomGenerator.ReturnBetween(5,0).getmin());
         System.out.println(RandomGenerator.ReturnMin(5).getmax());
         System.out.println(RandomGenerator.ReturnMax(5).getmin());
         
@@ -35,16 +39,31 @@ public class MyTestApplication {
       
            //ingleton
         ELVIS.getInstance().GetX();
-        System.out.println(ELVIS.getInstance().GetX());
+        System.out.println(ELVIS.getInstance().GetX());*/
            //private constructor 
        // UtilityClass U = new UtilityClass();
        
+                                
+                                Thread backgroundThread = new Thread(new Runnable() {
+                                public void run() {
+                                int i = 0;
+                                while (!stopRequested)
+                                //i++;  
+                                     System.out.println("it's running");
+                                if (stopRequested) System.out.println("Oooops its stops"); 
+                                }
+                                });
+                                backgroundThread.start();
+                                TimeUnit.SECONDS.sleep(1);
+                                stopRequested = true;
+                                }
+
 
        
        
        
     
       
-    }
+    
     
 }
