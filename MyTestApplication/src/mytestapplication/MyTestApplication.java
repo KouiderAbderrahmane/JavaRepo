@@ -17,6 +17,12 @@ public class MyTestApplication {
     
     
     private static boolean stopRequested;
+                    private static synchronized void requestStop() {
+                        stopRequested = true;
+                        }
+                    private static synchronized boolean stopRequested() {
+                        return stopRequested;
+                        }
     /**
      * @param args the command line arguments
      */
@@ -44,7 +50,7 @@ public class MyTestApplication {
        // UtilityClass U = new UtilityClass();
        
                                 
-                                Thread backgroundThread = new Thread(new Runnable() {
+                             /*   Thread backgroundThread = new Thread(new Runnable() {
                                 public void run() {
                                 int i = 0;
                                 while (!stopRequested)
@@ -56,6 +62,22 @@ public class MyTestApplication {
                                 backgroundThread.start();
                                 TimeUnit.SECONDS.sleep(1);
                                 stopRequested = true;
+                                }*/
+                             
+                             Thread backgroundThread = new Thread(new Runnable() {
+                                public void run() {
+                                int i = 0;
+                                while (!stopRequested())
+                                //i++;  
+                                     System.out.println("it's running");
+                                if (stopRequested) System.out.println("Oooops its stops"); 
+                                }
+
+                             
+                                });
+                                backgroundThread.start();
+                                TimeUnit.SECONDS.sleep(1);
+                                requestStop();
                                 }
 
 
