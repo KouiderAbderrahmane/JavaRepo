@@ -5,6 +5,13 @@
  */
 package mytestapplication;
 
+import java.awt.Color;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import static mytestapplication.RandomGenerator.ReturnBetween;
 
@@ -64,7 +71,7 @@ public class MyTestApplication {
                                 stopRequested = true;
                                 }*/
                              
-                             Thread backgroundThread = new Thread(new Runnable() {
+                            /* Thread backgroundThread = new Thread(new Runnable() {
                                 public void run() {
                                 int i = 0;
                                 while (!stopRequested())
@@ -77,9 +84,81 @@ public class MyTestApplication {
                                 });
                                 backgroundThread.start();
                                 TimeUnit.SECONDS.sleep(1);
-                                requestStop();
+                                requestStop();*/
+                            
+                            
+                          /*  ObservableSet<Integer> set =
+                                new ObservableSet<Integer>(new HashSet<Integer>());
+                            
+                            
+                                set.addObserver(new SetObserver<Integer>() {
+                                public void added(ObservableSet<Integer> s, Integer e) {
+                                System.out.println(e);
+                                if (e == 23) s.removeObserver(this);
                                 }
+                                });
+                                for (int i = 0; i < 100; i++)
+                                set.add(i);
+                            /*
+                           /* set.addObserver(new SetObserver<Integer>() {
+                                public void added(final ObservableSet<Integer> s, Integer e) {
+                                System.out.println(e);
+                                if (e == 23) {
+                                ExecutorService executor = Executors.newSingleThreadExecutor();
+                                final SetObserver<Integer> observer = this;
+                                try {
+                                executor.submit(new Runnable() {
+                                public void run() {
+                                s.removeObserver(observer);
+                                }
+                                }).get();
+                                } catch (ExecutionException ex) {
+                                throw new AssertionError(ex.getCause());
+                                } catch (InterruptedException ex) {
+                                throw new AssertionError(ex.getCause());
+                                } finally {
+                                executor.shutdown();
+                                }
+                                }
+                                }
+                                });
+                            for (int i = 0; i < 100; i++)
+                                set.add(i);*/
 
+                                
+                                
+                                
+                               /* CaseInsensitiveString cis = new CaseInsensitiveString("Polish");
+                                String s = "polish";
+                                s.equals(cis);
+                                cis.equals(s);
+                                System.out.println(s.equals(cis));*/
+                                
+                                
+                            /*    
+                                
+                                ColorPoint p1 = new ColorPoint(1, 2, Color.RED);
+                                Point p2 = new Point(1, 2);
+                                ColorPoint p3 = new ColorPoint(1, 2, Color.BLUE);
+                                
+                                 System.out.println(p1.equals(p2));
+                                 System.out.println(p2.equals(p3));
+                                 System.out.println(p1.equals(p3));
+                                 */
+                                 
+                                 
+                                 Map<PhoneNumber, String> m = new HashMap<PhoneNumber, String>();
+                                m.put(new PhoneNumber(707, 867, 5309), "Jenny");
+                               // m.get(new PhoneNumber(707, 867, 5309));
+                                System.out.println(m.get(new PhoneNumber(707, 867, 5309)));
+                                System.out.println(new PhoneNumber(707, 867, 5309).hashCode());
+                                
+                                System.out.println(m.toString());
+    
+                                      
+                                
+                                }
+                         
 
        
        
