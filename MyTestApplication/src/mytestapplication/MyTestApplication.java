@@ -148,13 +148,34 @@ public class MyTestApplication {
                                  
                                  
                                  Map<PhoneNumber, String> m = new HashMap<PhoneNumber, String>();
-                                m.put(new PhoneNumber(707, 867, 5309), "Jenny");
+                                 Description desc=new Description("Desc");
+                                  m.put(new PhoneNumber(desc,707, 867, 5309), "Jenny");
+                               // m.put(new PhoneNumber(707, 867, 5309), "Jenny");
                                // m.get(new PhoneNumber(707, 867, 5309));
-                                System.out.println(m.get(new PhoneNumber(707, 867, 5309)));
-                                System.out.println(new PhoneNumber(707, 867, 5309).hashCode());
+                                //System.out.println(m.get(new PhoneNumber(707, 867, 5309)));
+                                //System.out.println(new PhoneNumber(707, 867, 5309).hashCode());
                                 
-                                System.out.println(m.toString());
-    
+                               // System.out.println(m.toString());
+                               PhoneNumber p = new PhoneNumber(desc,707, 867, 5309);
+                                System.out.println(p.getDescr().getDesc());
+                                PhoneNumber p1=p.clone();
+                                System.out.println(p1.getDescr().getDesc());
+                                
+                                System.out.println(p1.equals(p));
+                              
+                                
+                              //  System.out.println(p.clone() !=p);
+                                //System.out.println(p.clone().equals(p));
+                                    //System.out.println(p.clone().getClass());
+                                      //  System.out.println(p.getClass());
+                                
+                               /*Description Descrption=new Description("Leon");
+                               Product pr=new Product(Descrption,"Seat", 12222222);
+                               Product pr2= (Product) pr.clone();
+                               System.out.println(pr2);*/
+                                      
+                                      
+                                
                                       
                                 
                                 }

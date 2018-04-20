@@ -40,5 +40,15 @@ public class Stack {
                     if (elements.length == size)
                     elements = Arrays.copyOf(elements, 2 * size + 1);
                     }
+                    
+                    @Override public Stack clone() {
+                            try {
+                            Stack result = (Stack) super.clone();
+                            result.elements = elements.clone();
+                            return result;
+                            } catch (CloneNotSupportedException e) {
+                            throw new AssertionError();
+                            }
+                            }
     
 }
