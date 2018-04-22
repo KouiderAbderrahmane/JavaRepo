@@ -12,10 +12,13 @@ import java.awt.Color;
  * @author Vi Incorporated
  */
 public class ColorPoint extends Point{
+          
                     private final Color color;
+                    
+                    
                     public ColorPoint(int x, int y, Color color) {
-                    super(x, y);
-                    this.color = color;
+                        super(x, y);
+                        this.color = color;
                     }
                     
                         @Override public boolean equals(Object o) {
@@ -23,5 +26,14 @@ public class ColorPoint extends Point{
                                 if (!(o instanceof ColorPoint)) return o.equals(this);
                                 return super.equals(o) && ((ColorPoint) o).color == color;
                                 }
-    
+                        
+                   /* @Override   private int Somme()
+                        {
+                            return super.Somme();
+                        }    */
+                        @Override   public int Somme()
+                        {
+                            return super.Somme()+5;
+                        } 
+                        
 }

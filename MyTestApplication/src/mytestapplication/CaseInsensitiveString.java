@@ -29,4 +29,10 @@ package mytestapplication;
                                         return o instanceof CaseInsensitiveString && ((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
                                         }
                             //... // Remainder omitted
+                                    
+                            public String GetString(){
+                                return this.s;}
+                            
+                           
+                            
                             }

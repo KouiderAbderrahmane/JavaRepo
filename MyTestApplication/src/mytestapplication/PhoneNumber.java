@@ -91,59 +91,54 @@ public class PhoneNumber implements Cloneable{
                                     }
                                     
                                     }
+                                public int CompareTo(PhoneNumber pn)
+                                {
+                                    if(this.areaCode<pn.areaCode) return -1;
+                                    if(this.areaCode>pn.areaCode) return 1;
+                                    
+                                    if(this.lineNumber<pn.lineNumber) return -1;
+                                    if(this.lineNumber>pn.lineNumber) return 1;
+                                    
+                                    if(this.prefix<pn.prefix) return -1;
+                                    if(this.prefix>pn.prefix) return 1;
+                                    
+                                    return 0;
+                                }
 
-                                /**
-                                 * @return the areaCode
-                                 */
+                              
                                 public short getAreaCode() {
                                     return areaCode;
                                 }
-
-                                /**
-                                 * @param areaCode the areaCode to set
-                                 */
+                                
                                 public void setAreaCode(short areaCode) {
                                     this.areaCode = areaCode;
                                 }
 
-                                /**
-                                 * @return the prefix
-                                 */
+                              
                                 public short getPrefix() {
                                     return prefix;
                                 }
 
-                                /**
-                                 * @param prefix the prefix to set
-                                 */
+                               
                                 public void setPrefix(short prefix) {
                                     this.prefix = prefix;
                                 }
 
-                                /**
-                                 * @return the lineNumber
-                                 */
+                               
                                 public short getLineNumber() {
                                     return lineNumber;
                                 }
 
-                                /**
-                                 * @param lineNumber the lineNumber to set
-                                 */
                                 public void setLineNumber(short lineNumber) {
                                     this.lineNumber = lineNumber;
                                 }
 
-                                    /**
-                                     * @return the descr
-                                     */
+                                  
                                     public Description getDescr() {
                                         return descr;
                                     }
 
-                                    /**
-                                     * @param descr the descr to set
-                                     */
+                                    
                                     public void setDescr(Description descr) {
                                         this.descr = descr;
                                     }

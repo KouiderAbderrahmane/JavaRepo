@@ -13,8 +13,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * @author Vi Incorporated
  */
 public class AbstractFoo {
-                            private int x, y; // Our state
-                            // This enum and field are used to track initialization
+
+    
+                        private int x, y; 
                             private enum State { NEW, INITIALIZING, INITIALIZED };
                             private final AtomicReference<State> init = new AtomicReference<State>(State.NEW);
                             public AbstractFoo(int x, int y) { initialize(x, y); }
@@ -25,8 +26,8 @@ public class AbstractFoo {
                                         if (!init.compareAndSet(State.NEW, State.INITIALIZING))
                                         throw new IllegalStateException(
                                         "Already initialized");
-                                        this.x = x;
-                                        this.y = y;
+                                        this.setX(x);
+                                        this.setY(y);
 
                                         init.set(State.INITIALIZED);
                             }
@@ -39,4 +40,14 @@ public class AbstractFoo {
                             if (init.get() != State.INITIALIZED) throw new IllegalStateException("Uninitialized");
                             }
     
+                            
+                            public void setX(int x) {
+                                                        this.x = x;
+                                                    }
+
+ 
+                            public void setY(int y) {
+                                                        this.y = y;
+                                                    }
+        
 }

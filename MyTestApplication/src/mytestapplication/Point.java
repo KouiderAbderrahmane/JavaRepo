@@ -10,8 +10,8 @@ package mytestapplication;
  * @author Vi Incorporated
  */
 public class Point {
-                    private final int x;
-                    private final int y;
+                    private int x;
+                    private int y;
                         public Point(int x, int y) {
                         this.x = x;
                         this.y = y;
@@ -21,7 +21,31 @@ public class Point {
                                 if (o == null || o.getClass() != getClass())
                                 return false;
                                 Point p = (Point) o;
-                                return p.x == x && p.y == y;
+                                return p.getX() == getX() && p.getY() == getY();
                         }
+                        
+                        
+                     public int Somme()
+                     {
+                         return this.getX()+this.getY();
+                     }
+                     
+                            public int getX() {
+                                return x;
+                            }
+
+                            public void setX(int x) {
+                                this.x = x;
+                            }
+
+                        
+                            public int getY() {
+                                return y;
+                            }
+
+                          
+                            public void setY(int y) {
+                                this.y = y;
+                            }
     
 }

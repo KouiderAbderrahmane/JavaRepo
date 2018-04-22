@@ -175,6 +175,19 @@ public class MyTestApplication {
                                System.out.println(pr2);*/
                                       
                                       
+                               
+                               //////CompareTO
+                                System.out.println("CompareTo");
+                               nom n = new nom("K", "A");
+                               nom n1 = new nom("K", "A");
+                               System.out.println(n.equals(n1));
+                               System.out.println(n.HashCode());
+                               
+                               PhoneNumber phone =new PhoneNumber(1220, 1000, 15000);
+                               PhoneNumber phone1 =new PhoneNumber(1222, 1000, 15000);
+                               
+                               System.out.println("this is compareTo :"+phone.CompareTo(phone1));
+                               
                                 
                                       
                                 

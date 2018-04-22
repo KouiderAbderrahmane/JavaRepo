@@ -37,8 +37,7 @@ public class Description implements Cloneable{
                                     
                                     } catch(CloneNotSupportedException e) {
                                     throw new AssertionError();
-                                    }
-                                    
+                                    }                       
         }
 
                                     /**
