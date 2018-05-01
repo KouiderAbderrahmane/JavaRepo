@@ -6,9 +6,14 @@
 package mytestapplication;
 
 import java.awt.Color;
+import static java.lang.Math.E;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -187,6 +192,21 @@ public class MyTestApplication {
                                PhoneNumber phone1 =new PhoneNumber(1222, 1000, 15000);
                                
                                System.out.println("this is compareTo :"+phone.CompareTo(phone1));
+                               
+                               
+                               /*
+                               InstrumentedHashSet<String> s =
+                                new InstrumentedHashSet<String>();
+                                s.addAll(Arrays.asList("Snap", "Crackle", "Pop"));
+                                   System.out.println(s.getAddCount());*/
+                               
+                               
+                               
+                               int cmp=0;
+                               Date e = null;
+                               Set<Date> s = new InstrumentedSet<Date>(new TreeSet<Date>());
+                               //Set<E> s2 = new InstrumentedSet<E>(new HashSet<E>(capacity));
+                               s.add(e);
                                
                                 
                                       
