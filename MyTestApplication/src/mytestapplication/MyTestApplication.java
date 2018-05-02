@@ -202,14 +202,26 @@ public class MyTestApplication {
                                
                                
                                
-                               int cmp=0;
-                               Date e = null;
-                               Set<Date> s = new InstrumentedSet<Date>(new TreeSet<Date>());
-                               //Set<E> s2 = new InstrumentedSet<E>(new HashSet<E>(capacity));
-                               s.add(e);
-                               
+                          
                                 
                                       
+                               
+                               //////
+                               
+                               InstrumentMusique guitare=new Guitare(new AccorderAvecDiapason());
+                               guitare.Apparaitre();
+                               guitare.AccorderInstrument();
+                               guitare.Jouer();
+                               
+                               InstrumentMusique piano = new Piano(new NePasAccorder());
+                               piano.Apparaitre();
+                               piano.AccorderInstrument();
+                               piano.Jouer();
+                               
+                               
+                               piano.SetAccordage(new NePasAccorder());
+                               piano.Jouer();
+                               
                                 
                                 }
                          
